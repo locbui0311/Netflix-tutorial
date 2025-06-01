@@ -1,0 +1,7 @@
+.container {
+  @apply min-h-screen bg-black;
+}
+
+.main {
+  @apply flex-1;
+} 
