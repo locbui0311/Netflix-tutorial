@@ -8,8 +8,8 @@ const Header = () => {
         <div className={styles.navLeft}>
           <a href="#" className={styles.logo}>Netflix</a>
           <div className={styles.navLinks}>
-            <a href="#" className={`${styles.navLink} ${styles.activeNav}`}>Home</a>
-            <a href="#" className={styles.navLink}>Movies</a>
+            <a href="/" className={`${styles.navLink} ${styles.activeNav}`}>Home</a>
+            <a href="/watch" className={styles.navLink}>Movies</a>
             <a href="#" className={styles.navLink}>TV Shows</a>
             <a href="#" className={styles.navLink}>New & Popular</a>
             <a href="#" className={styles.navLink}>My List</a>
