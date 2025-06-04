@@ -6,7 +6,7 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.navLeft}>
-          <a href="#" className={styles.logo}>Netflix</a>
+          <a href="#" className={styles.logo}>Mephim</a>
           <div className={styles.navLinks}>
             <a href="/" className={`${styles.navLink} ${styles.activeNav}`}>Home</a>
             <a href="/watch" className={styles.navLink}>Movies</a>
