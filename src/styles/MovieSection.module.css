@@ -1,0 +1,85 @@
+.section {
+  @apply relative mb-10;
+}
+
+.title {
+  @apply text-xl md:text-2xl font-bold mb-4 text-white;
+}
+
+.sliderContainer {
+  @apply relative overflow-hidden;
+}
+
+.slider {
+  @apply flex space-x-4 transition-transform duration-500 ease-in-out;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sliderButton {
+  @apply absolute top-1/2 -translate-y-1/2 w-12 h-12 rounded-full 
+  bg-black bg-opacity-70 flex items-center justify-center text-white 
+  z-20 cursor-pointer hover:bg-opacity-90 transition-all duration-200
+  disabled:opacity-30 disabled:cursor-not-allowed
+  focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50;
+}
+
+.prevButton {
+  @apply left-2;
+}
+
+.nextButton {
+  @apply right-2;
+}
+
+.buttonIcon {
+  @apply w-6 h-6;
+}
+
+/* Gradient overlay for buttons */
+.sliderContainer::before,
+.sliderContainer::after {
+  content: '';
+  @apply absolute top-0 bottom-0 w-32 z-10 pointer-events-none;
+}
+
+.sliderContainer::before {
+  @apply left-0 bg-gradient-to-r from-black to-transparent;
+}
+
+.sliderContainer::after {
+  @apply right-0 bg-gradient-to-l from-black to-transparent;
+}
+
+/* Hide scrollbar but keep functionality */
+.slider {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Infinite scroll animation */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.autoScroll {
+  animation: infiniteScroll 30s linear infinite;
+}
+
+.autoScroll:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth transition for reset */
+.slider {
+  transition: transform 0.5s ease-in-out;
+} 

@@ -1,0 +1,87 @@
+.hero {
+    @apply relative h-[80vh] w-full overflow-hidden;
+  }
+  
+  .heroBackground {
+    @apply absolute inset-0 w-full h-full;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-out;
+  }
+  
+  .hero:hover .heroBackground {
+    transform: scale(1);
+  }
+  
+  .heroContent {
+    @apply absolute inset-0 flex items-center px-4 md:px-8;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+  }
+  
+  .heroInfo {
+    @apply max-w-2xl text-white z-10;
+  }
+  
+  .title {
+    @apply text-4xl md:text-6xl font-bold mb-4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .meta {
+    @apply flex items-center space-x-4 mb-4;
+  }
+  
+  .match {
+    @apply text-green-500 font-semibold;
+  }
+  
+  .year, .rating, .seasons {
+    @apply text-gray-300;
+  }
+  
+  .description {
+    @apply text-lg text-gray-300 mb-6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .actions {
+    @apply flex space-x-4;
+  }
+  
+  .playButton {
+    @apply flex items-center space-x-2 bg-white text-black px-6 py-2 rounded-md hover:bg-opacity-80 transition-colors duration-200;
+  }
+  
+  .moreInfoButton {
+    @apply flex items-center space-x-2 bg-gray-600 bg-opacity-70 text-white px-6 py-2 rounded-md hover:bg-opacity-50 transition-colors duration-200;
+  }
+  
+  .overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .heroContent {
+      @apply px-4;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
+  
+    .title {
+      @apply text-3xl;
+    }
+  
+    .description {
+      @apply text-base;
+    }
+  
+    .actions {
+      @apply flex-col space-y-4 space-x-0;
+    }
+  
+    .playButton, .moreInfoButton {
+      @apply w-full justify-center;
+    }
+  }

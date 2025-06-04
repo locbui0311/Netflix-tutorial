@@ -1,0 +1,55 @@
+.header {
+  @apply fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black to-transparent;
+}
+
+.nav {
+  @apply flex items-center justify-between px-4 md:px-8 py-4;
+}
+
+.navLeft {
+  @apply flex items-center space-x-8;
+}
+
+.logo {
+  @apply text-red-600 text-2xl font-bold;
+}
+
+.navLinks {
+  @apply hidden md:flex items-center space-x-4;
+}
+
+.navLink {
+  @apply text-gray-300 hover:text-white transition-colors duration-200;
+}
+
+.activeNav {
+  @apply text-white font-semibold;
+}
+
+.navRight {
+  @apply flex items-center space-x-4;
+}
+
+.searchContainer {
+  @apply relative hidden md:block;
+}
+
+.searchInput {
+  @apply bg-black bg-opacity-50 text-white px-4 py-1 rounded-md border border-gray-600 focus:outline-none focus:border-white;
+}
+
+.searchIcon {
+  @apply absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400;
+}
+
+.languageSelector {
+  @apply flex items-center space-x-1 text-white cursor-pointer;
+}
+
+.dropdownIcon {
+  @apply w-4 h-4;
+}
+
+.profileButton {
+  @apply w-8 h-8 rounded-md bg-red-600 flex items-center justify-center text-white font-semibold cursor-pointer;
+} 

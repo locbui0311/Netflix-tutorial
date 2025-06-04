@@ -1,0 +1,80 @@
+.movieCard {
+  @apply flex-shrink-0 w-40 md:w-48 relative;
+}
+
+.rank {
+  @apply absolute -left-4 bottom-0 text-6xl font-bold text-gray-800 z-10 drop-shadow-lg;
+}
+
+.card {
+  @apply relative rounded-md overflow-hidden h-60 md:h-72 bg-gray-800 border-b-4 border-red-600;
+}
+
+.overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50;
+}
+
+.playIcon {
+  @apply w-full h-full text-gray-700;
+}
+
+.info {
+  @apply absolute bottom-0 left-0 p-3;
+}
+
+.title {
+  @apply font-semibold text-white;
+}
+
+.meta {
+  @apply flex items-center text-xs text-gray-300;
+}
+
+.match {
+  @apply text-green-500 mr-1;
+}
+
+.progressBar {
+  @apply absolute bottom-0 left-0 right-0 h-1 bg-gray-700;
+}
+
+.progress {
+  @apply h-full bg-red-600;
+}
+
+/* Slider Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slider {
+  @apply flex space-x-4 overflow-hidden;
+  animation: slide 20s linear infinite;
+}
+
+.slider:hover {
+  animation-play-state: paused;
+}
+
+.sliderContainer {
+  @apply relative overflow-hidden;
+}
+
+.sliderContainer::before,
+.sliderContainer::after {
+  content: '';
+  @apply absolute top-0 bottom-0 w-20 z-10;
+}
+
+.sliderContainer::before {
+  @apply left-0 bg-gradient-to-r from-black to-transparent;
+}
+
+.sliderContainer::after {
+  @apply right-0 bg-gradient-to-l from-black to-transparent;
+} 
