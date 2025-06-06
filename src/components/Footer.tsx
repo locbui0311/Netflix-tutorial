@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerBottom}>
-        <p className={styles.copyright}>© 2024 Netflix Clone. All rights reserved.</p>
+        <p className={styles.copyright}>© 2025 Mephim. All rights reserved.</p>
       </div>
     </footer>
   );

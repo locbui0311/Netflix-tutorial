@@ -21,9 +21,10 @@ const videos: VideoData[] = [
 
 const Watch = () => {
   const router = useRouter();
-  const { videoId } = router.query;
-  
-  const video = videos.find(v => v.id === videoId) || videos[0];
+  const video = {
+    url: '/videos/video.mp4', // đường dẫn sau khi đã đặt vào public/videos/
+    name: 'Video Demo'
+  };
 
   return (
     <Layout>

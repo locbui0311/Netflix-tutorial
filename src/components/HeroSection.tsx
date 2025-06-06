@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
 
 const HeroSection: React.FC = () => {
+
+  const router = useRouter();
+
+  const handlePlayClick = () => {
+    router.push('/watch');
+  };
   return (
     <section className={styles.hero}>
       <div 
@@ -23,7 +30,7 @@ const HeroSection: React.FC = () => {
             When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.
           </p>
           <div className={styles.actions}>
-            <button className={styles.playButton}>
+            <button className={styles.playButton} onClick={handlePlayClick}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

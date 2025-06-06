@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import styles from '../styles/Header.module.css';
+import LoginModal from './LoginModal';
 
 const Header = () => {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.navLeft}>
-          <a href="#" className={styles.logo}>Mephim</a>
+        <a href="/" className={styles.logo}>
+      <Image
+        src="/images/logoWhite.png"
+        alt="Mephim Logo"
+        width={120} // hoặc kích thước bạn muốn
+        height={40}
+        priority
+      />
+    </a>
           <div className={styles.navLinks}>
             <a href="/" className={`${styles.navLink} ${styles.activeNav}`}>Home</a>
             <a href="/watch" className={styles.navLink}>Movies</a>
@@ -28,11 +40,15 @@ const Header = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </div>
-          <div className={styles.profileButton}>
+          <div className={styles.profileButton} onClick={() => setIsLoginModalOpen(true)}>
             <span>U</span>
           </div>
         </div>
       </nav>
+      <LoginModal 
+        isOpen={isLoginModalOpen} 
+        onClose={() => setIsLoginModalOpen(false)} 
+      />
     </header>
   );
 };
